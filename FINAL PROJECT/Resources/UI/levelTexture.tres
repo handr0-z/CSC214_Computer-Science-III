@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://cb6csk7i0viu4"]
+
+[ext_resource type="Texture2D" uid="uid://btlqm55t654h" path="res://Assets/Art/UI/Borders Asset Pack/Deco All 3.png" id="1_7loaj"]
+
+[resource]
+atlas = ExtResource("1_7loaj")
+region = Rect2(448.43658, 128.56894, 63.112488, 63.112457)

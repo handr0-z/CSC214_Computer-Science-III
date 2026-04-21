@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://dwt6n4djjmsby"]
+
+[ext_resource type="Script" uid="uid://ksbr2ehlrkqu" path="res://Scripts/Level Assets/Base/base.gd" id="1_rls64"]
+[ext_resource type="Texture2D" uid="uid://bvn1upeoryjw3" path="res://Assets/Art/Level Assets/Base/Base.png" id="2_cw8yb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fdf88"]
+radius = 15.033297
+
+[node name="Base" type="Node2D"]
+script = ExtResource("1_rls64")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, 2)
+rotation = 1.5707964
+texture = ExtResource("2_cw8yb")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_fdf88")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

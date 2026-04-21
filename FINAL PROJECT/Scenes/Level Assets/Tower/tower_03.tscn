@@ -1,0 +1,34 @@
+[gd_scene load_steps=9 format=3 uid="uid://bdvsih7jrrdtr"]
+
+[ext_resource type="PackedScene" uid="uid://k0vt6u5l84ia" path="res://Scenes/Level Assets/Tower/tower.tscn" id="1_dmvpr"]
+[ext_resource type="PackedScene" uid="uid://bqg1ydi3ox2or" path="res://Scenes/Level Assets/Bullet/bullet_linear.tscn" id="2_uiaev"]
+[ext_resource type="Texture2D" uid="uid://7omsvre3jxdd" path="res://Assets/Art/Level Assets/Tower/Candle base.png" id="3_rodse"]
+[ext_resource type="Texture2D" uid="uid://eeebl5pbicdx" path="res://Assets/Art/Level Assets/Tower/Candle 1.1.png" id="4_dm5m8"]
+[ext_resource type="Texture2D" uid="uid://04tr7rtnhyjg" path="res://Assets/Art/Level Assets/Tower/Candle 1.2.png" id="5_p8ylp"]
+[ext_resource type="Texture2D" uid="uid://buxrmpn21vhxm" path="res://Assets/Art/Level Assets/Tower/Candle 1.3.png" id="6_134bi"]
+[ext_resource type="Texture2D" uid="uid://cby7r2nigb28m" path="res://Assets/Art/Level Assets/Tower/Candle 1.4.png" id="7_miqqm"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_dgnif"]
+frames = 4
+frame_0/texture = ExtResource("4_dm5m8")
+frame_0/duration = 0.2
+frame_1/texture = ExtResource("5_p8ylp")
+frame_1/duration = 0.2
+frame_2/texture = ExtResource("6_134bi")
+frame_2/duration = 0.2
+frame_3/texture = ExtResource("7_miqqm")
+frame_3/duration = 0.2
+
+[node name="tower_01" instance=ExtResource("1_dmvpr")]
+p_bullet = ExtResource("2_uiaev")
+cooldown = 2.0
+damage = 50.0
+cost = 50
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("3_rodse")
+
+[node name="Sprite2D2" parent="fort" index="0"]
+texture = SubResource("AnimatedTexture_dgnif")
+
+[connection signal="input_event" from="ClickArea" to="." method="input_event"]

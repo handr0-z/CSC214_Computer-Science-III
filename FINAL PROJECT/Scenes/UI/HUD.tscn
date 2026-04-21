@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://c24kqmt1sugmt"]
+
+[ext_resource type="Script" uid="uid://dde331um42nui" path="res://Scripts/UI/HUD.gd" id="1_kw0id"]
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_kw0id")
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HealthLabel" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="GoldLabel" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="WaveLabel" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0

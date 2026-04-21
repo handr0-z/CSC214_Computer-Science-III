@@ -1,0 +1,77 @@
+[gd_scene load_steps=3 format=3 uid="uid://begabuyvhb815"]
+
+[ext_resource type="Script" uid="uid://q11omdcanky2" path="res://Scripts/UI/upgrade_panel.gd" id="1_ynj61"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_46tam"]
+bg_color = Color(0.29803923, 0.29803923, 0.29803923, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0.7254902, 0.7254902, 0.7254902, 1)
+
+[node name="upgrade_panel" type="PanelContainer"]
+custom_minimum_size = Vector2(220, 150)
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -225.0
+offset_top = 400.0
+offset_right = -5.0
+offset_bottom = -5.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_46tam")
+script = ExtResource("1_ynj61")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="hb_damage" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="lab_damage" type="Label" parent="MarginContainer/VBoxContainer/hb_damage"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="btn_damage" type="Button" parent="MarginContainer/VBoxContainer/hb_damage"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="hb_speed" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="lab_speed" type="Label" parent="MarginContainer/VBoxContainer/hb_speed"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="btn_speed" type="Button" parent="MarginContainer/VBoxContainer/hb_speed"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="hb_range" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="lab_range" type="Label" parent="MarginContainer/VBoxContainer/hb_range"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="btn_range" type="Button" parent="MarginContainer/VBoxContainer/hb_range"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/hb_damage/btn_damage" to="." method="_on_btn_damage_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/hb_speed/btn_speed" to="." method="_on_btn_speed_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/hb_range/btn_range" to="." method="_on_btn_range_pressed"]

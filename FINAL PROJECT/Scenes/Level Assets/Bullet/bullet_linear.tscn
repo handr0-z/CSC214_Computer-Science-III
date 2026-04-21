@@ -1,0 +1,31 @@
+[gd_scene load_steps=8 format=3 uid="uid://bqg1ydi3ox2or"]
+
+[ext_resource type="PackedScene" uid="uid://bt5ssito74mvj" path="res://Scenes/Level Assets/Bullet/bullet.tscn" id="1_npi0a"]
+[ext_resource type="Script" uid="uid://bu8g4ojxn7dgg" path="res://Scripts/Level Assets/Bullet/bullet_linear.gd" id="2_8qj7l"]
+[ext_resource type="Texture2D" uid="uid://do1yrxj2moo6y" path="res://Assets/Art/Level Assets/Projectile/blue fire 1.1.png" id="3_vcoh8"]
+[ext_resource type="Texture2D" uid="uid://dav7o83i7wam3" path="res://Assets/Art/Level Assets/Projectile/blue fire 1.2.png" id="4_miasp"]
+[ext_resource type="Texture2D" uid="uid://csmbijeod8fr3" path="res://Assets/Art/Level Assets/Projectile/blue fire 1.3.png" id="5_nv7d0"]
+[ext_resource type="Texture2D" uid="uid://den7bb6b0h2hy" path="res://Assets/Art/Level Assets/Projectile/blue fire 1.4.png" id="6_3ap7p"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_k43ah"]
+frames = 4
+frame_0/texture = ExtResource("3_vcoh8")
+frame_0/duration = 0.2
+frame_1/texture = ExtResource("4_miasp")
+frame_1/duration = 0.2
+frame_2/texture = ExtResource("5_nv7d0")
+frame_2/duration = 0.2
+frame_3/texture = ExtResource("6_3ap7p")
+frame_3/duration = 0.2
+
+[node name="bullet_linear" instance=ExtResource("1_npi0a")]
+script = ExtResource("2_8qj7l")
+P_EXPLOSION = null
+explode_damage = 8.0
+
+[node name="Sprite2D" parent="." index="0"]
+rotation = 1.5707964
+texture = SubResource("AnimatedTexture_k43ah")
+
+[node name="Area2D" parent="." index="2"]
+scale = Vector2(0.5, 0.5)

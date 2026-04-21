@@ -1,0 +1,80 @@
+[gd_scene load_steps=13 format=3 uid="uid://k0vt6u5l84ia"]
+
+[ext_resource type="Script" uid="uid://cd75cnhrsht20" path="res://Scripts/Level Assets/Tower/tower.gd" id="1_us8fu"]
+[ext_resource type="PackedScene" uid="uid://bt5ssito74mvj" path="res://Scenes/Level Assets/Bullet/bullet.tscn" id="2_qj5w7"]
+[ext_resource type="Texture2D" uid="uid://cwbd7qkluibtd" path="res://Assets/Art/Level Assets/Tower/Pumpkin base.png" id="4_08xi5"]
+[ext_resource type="AudioStream" uid="uid://bkbo0o13v06ca" path="res://Assets/Sound/SFX/explosion4.ogg" id="5_13go8"]
+[ext_resource type="Texture2D" uid="uid://cyy12ypw1taa7" path="res://Assets/Art/Level Assets/Tower/Pumpkin 1.1.png" id="5_dd8l5"]
+[ext_resource type="Texture2D" uid="uid://byjb6yjohekek" path="res://Assets/Art/Level Assets/Tower/Pumpkin 1.2.png" id="6_cnlde"]
+[ext_resource type="Script" uid="uid://bahevahov1khu" path="res://Scripts/Level Assets/Tower/range_indicator.gd" id="6_diaog"]
+[ext_resource type="Texture2D" uid="uid://dcidj2lbw616m" path="res://Assets/Art/Level Assets/Tower/Pumpkin 1.3.png" id="7_877n5"]
+[ext_resource type="Texture2D" uid="uid://cqk373v2yd3os" path="res://Assets/Art/Level Assets/Tower/Pumpkin 1.4.png" id="8_scupc"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_mx6qw"]
+frames = 4
+frame_0/texture = ExtResource("5_dd8l5")
+frame_0/duration = 0.2
+frame_1/texture = ExtResource("6_cnlde")
+frame_1/duration = 0.2
+frame_2/texture = ExtResource("7_877n5")
+frame_2/duration = 0.2
+frame_3/texture = ExtResource("8_scupc")
+frame_3/duration = 0.2
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4aqul"]
+radius = 17.029387
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_diaog"]
+radius = 17.0
+
+[node name="tower" type="Node2D" groups=["actor", "tower"]]
+script = ExtResource("1_us8fu")
+cost = null
+damage = null
+damage_increase = null
+damage_cost = null
+attack_speed = null
+speed_increase = null
+speed_cost = null
+range = null
+range_increase = null
+range_cost = null
+p_bullet = ExtResource("2_qj5w7")
+bullet_count = null
+rotation_speed = null
+
+[node name="RangeIndicator" type="Node2D" parent="."]
+z_index = 10
+script = ExtResource("6_diaog")
+color = Color(1, 1, 1, 0.39215687)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("4_08xi5")
+
+[node name="fort" type="Node2D" parent="."]
+
+[node name="Sprite2D2" type="Sprite2D" parent="fort"]
+rotation = 1.5708
+texture = SubResource("AnimatedTexture_mx6qw")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_4aqul")
+
+[node name="audio_explosion" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_13go8")
+volume_db = -10.0
+bus = &"Sound Effects"
+
+[node name="ClickArea" type="Area2D" parent="."]
+collision_layer = 2048
+collision_mask = 2048
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea"]
+shape = SubResource("CircleShape2D_diaog")
+debug_color = Color(1, 1, 1, 0.43529412)
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="input_event" from="ClickArea" to="." method="_on_click_area_input_event"]

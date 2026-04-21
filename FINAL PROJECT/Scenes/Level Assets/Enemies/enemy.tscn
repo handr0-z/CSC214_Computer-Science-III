@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://b6rxwl2ai7deu"]
+
+[ext_resource type="Script" uid="uid://74hjgdtaq2ln" path="res://Scripts/Level Assets/Enemies/enemy.gd" id="1_rl2a8"]
+[ext_resource type="AudioStream" uid="uid://k3sjvxtm4mh8" path="res://Assets/Sound/SFX/hit3.ogg" id="3_7wnpj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pfb0x"]
+radius = 42.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rendp"]
+bg_color = Color(0.933333, 0.164706, 0.152941, 1)
+
+[node name="Enemy" type="PathFollow2D" groups=["actor", "enemies", "enemy"]]
+script = ExtResource("1_rl2a8")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_pfb0x")
+
+[node name="audio_dead" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_7wnpj")
+volume_db = -10.0
+bus = &"Sound Effects"
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 15)
+offset_left = -50.0
+offset_top = 32.0
+offset_right = 78.0
+offset_bottom = 47.0
+rotation = -1.5707964
+scale = Vector2(0.5, 0.5)
+theme_override_styles/fill = SubResource("StyleBoxFlat_rendp")
+value = 50.0
+show_percentage = false
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

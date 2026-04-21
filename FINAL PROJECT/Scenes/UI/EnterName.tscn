@@ -1,0 +1,120 @@
+[gd_scene load_steps=10 format=3 uid="uid://dmww4tjes47mu"]
+
+[ext_resource type="Script" uid="uid://dvk37x6kyf4tg" path="res://Scripts/UI/enter_name.gd" id="1_gfr5l"]
+[ext_resource type="Texture2D" uid="uid://dp33ffu5dg2gs" path="res://Assets/Art/UI/bg2.jpg" id="2_gfr5l"]
+[ext_resource type="FontFile" uid="uid://cj8xiwghoopru" path="res://Assets/Fonts/Daydream DEMO.otf" id="3_f1w3d"]
+[ext_resource type="AudioStream" uid="uid://c1yyf3xrbjyro" path="res://Assets/Sound/Music/Sommercamp2024 4.mp3" id="4_451j0"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2ysvc"]
+texture = ExtResource("2_gfr5l")
+modulate_color = Color(0.08627451, 0.20784314, 0.3372549, 0.9647059)
+
+[sub_resource type="FontVariation" id="FontVariation_ctv5m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xpiny"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bhu4a"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e2per"]
+
+[node name="EnterName" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gfr5l")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_2ysvc")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(1152, 648)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(300, 350)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MarginContainer"]
+custom_minimum_size = Vector2(200, 275)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+
+[node name="LineEdit" type="LineEdit" parent="MarginContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_ctv5m")
+placeholder_text = "Enter"
+alignment = 1
+
+[node name="Confirm" type="Button" parent="MarginContainer/MarginContainer/VBoxContainer"]
+texture_filter = 3
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_vertical = 0
+size_flags_stretch_ratio = 0.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.84313726, 0.14901961, 0.23921569, 1)
+theme_override_colors/font_hover_color = Color(0.40784314, 0.77254903, 0.85882354, 1)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("3_f1w3d")
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xpiny")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_bhu4a")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_e2per")
+text = "Confirm
+"
+
+[node name="TitleContainer" type="MarginContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(500, 300)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_constants/margin_bottom = 16
+
+[node name="Label" type="Label" parent="MarginContainer/TitleContainer"]
+texture_filter = 3
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.2736384, 0.61946183, 0.69836336, 1)
+theme_override_colors/font_outline_color = Color(0.26666668, 0.56078434, 0.6392157, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("3_f1w3d")
+theme_override_font_sizes/font_size = 45
+text = "enter your name"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="AudioStreamPlayer(Music)" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_451j0")
+autoplay = true
+bus = &"Music"
+
+[node name="AudioStreamPlayer(SFX)" type="AudioStreamPlayer" parent="."]
+bus = &"Sound Effects"
+
+[connection signal="pressed" from="MarginContainer/MarginContainer/VBoxContainer/Confirm" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="MarginContainer/MarginContainer/VBoxContainer/Confirm" to="." method="_on_start_button_pressed"]

@@ -1,0 +1,27 @@
+[gd_scene load_steps=7 format=3 uid="uid://bcuxj4oqke6yp"]
+
+[ext_resource type="PackedScene" uid="uid://dsv7vfuh3knl1" path="res://Scenes/Level Assets/Bullet/bullet_homing.tscn" id="1_kfr2w"]
+[ext_resource type="Texture2D" uid="uid://jl1l1tbrejt7" path="res://Assets/Art/Level Assets/Projectile/Flaming Pumpkin seed 1.1.png" id="2_r43th"]
+[ext_resource type="Texture2D" uid="uid://ejfqtgh0lvg3" path="res://Assets/Art/Level Assets/Projectile/Flaming Pumpkin seed 1.2.png" id="3_oukq5"]
+[ext_resource type="Texture2D" uid="uid://d17tt50mnp3sp" path="res://Assets/Art/Level Assets/Projectile/Flaming Pumpkin seed 1.3.png" id="4_e1owq"]
+[ext_resource type="Texture2D" uid="uid://d3f1etornw5uu" path="res://Assets/Art/Level Assets/Projectile/Flaming Pumpkin seed 1.4.png" id="5_spoe6"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_6to12"]
+frames = 4
+frame_0/texture = ExtResource("2_r43th")
+frame_0/duration = 0.2
+frame_1/texture = ExtResource("3_oukq5")
+frame_1/duration = 0.2
+frame_2/texture = ExtResource("4_e1owq")
+frame_2/duration = 0.2
+frame_3/texture = ExtResource("5_spoe6")
+frame_3/duration = 0.2
+
+[node name="bullet_homing_02" instance=ExtResource("1_kfr2w")]
+
+[node name="Sprite2D" parent="." index="0"]
+rotation = 1.5707964
+texture = SubResource("AnimatedTexture_6to12")
+
+[node name="Area2D" parent="." index="2"]
+scale = Vector2(0.5, 0.5)

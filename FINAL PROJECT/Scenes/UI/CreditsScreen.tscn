@@ -1,0 +1,230 @@
+[gd_scene load_steps=8 format=3 uid="uid://bvs7tpekxaj6y"]
+
+[ext_resource type="Script" uid="uid://up628vow7d30" path="res://Scripts/UI/CreditsScreen.gd" id="1_7u7vl"]
+[ext_resource type="FontFile" uid="uid://cj8xiwghoopru" path="res://Assets/Fonts/Daydream DEMO.otf" id="1_ymyx7"]
+[ext_resource type="Texture2D" uid="uid://dp33ffu5dg2gs" path="res://Assets/Art/UI/bg2.jpg" id="2_2f8bi"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dgy0c"]
+texture = ExtResource("2_2f8bi")
+modulate_color = Color(0.05193335, 0.14458844, 0.2431547, 0.9647059)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ymyx7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7u7vl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x87vl"]
+
+[node name="CreditsScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7u7vl")
+
+[node name="Panel" type="Panel" parent="."]
+texture_filter = 3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_dgy0c")
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(1152, 648)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 135
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer2"]
+custom_minimum_size = Vector2(850, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_constants/margin_bottom = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="VBox(1st Column)" type="VBoxContainer" parent="MarginContainer2/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(375, 280)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_constants/separation = 20
+
+[node name="Name1" type="HBoxContainer" parent="MarginContainer2/MarginContainer/HBoxContainer/VBox(1st Column)"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="NameLabel" type="Label" parent="MarginContainer2/MarginContainer/HBoxContainer/VBox(1st Column)/Name1"]
+texture_filter = 3
+layout_mode = 2
+theme_override_colors/font_color = Color(0.40784314, 0.77254903, 0.85882354, 1)
+theme_override_fonts/font = ExtResource("1_ymyx7")
+text = "Rjeezy"
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer2/MarginContainer/HBoxContainer/VBox(1st Column)/Name1"]
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="PositionLabel" type="Label" parent="MarginContainer2/MarginContainer/HBoxContainer/VBox(1st Column)/Name1"]
+texture_filter = 3
+layout_mode = 2
+theme_override_colors/font_color = Color(0.40784314, 0.77254903, 0.85882354, 1)
+theme_override_fonts/font = ExtResource("1_ymyx7")
+text = "FUnctionality Dev"
+horizontal_alignment = 2
+
+[node name="Name2" type="HBoxContainer" parent="MarginContainer2/MarginContainer/HBoxContainer/VBox(1st Column)"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="NameLabel" type="Label" parent="MarginContainer2/MarginContainer/HBoxContainer/VBox(1st Column)/Name2"]
+texture_filter = 3
+layout_mode = 2
+theme_override_colors/font_color = Color(0.40784314, 0.77254903, 0.85882354, 1)
+theme_override_fonts/font = ExtResource("1_ymyx7")
+text = "Alejandra"
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer2/MarginContainer/HBoxContainer/VBox(1st Column)/Name2"]
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="PositionLabel" type="Label" parent="MarginContainer2/MarginContainer/HBoxContainer/VBox(1st Column)/Name2"]
+texture_filter = 3
+layout_mode = 2
+theme_override_colors/font_color = Color(0.40784314, 0.77254903, 0.85882354, 1)
+theme_override_fonts/font = ExtResource("1_ymyx7")
+text = "UI Designer"
+horizontal_alignment = 2
+
+[node name="Name3" type="HBoxContainer" parent="MarginContainer2/MarginContainer/HBoxContainer/VBox(1st Column)"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="NameLabel" type="Label" parent="MarginContainer2/MarginContainer/HBoxContainer/VBox(1st Column)/Name3"]
+texture_filter = 3
+layout_mode = 2
+theme_override_colors/font_color = Color(0.40784314, 0.77254903, 0.85882354, 1)
+theme_override_fonts/font = ExtResource("1_ymyx7")
+text = "Alejandro"
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer2/MarginContainer/HBoxContainer/VBox(1st Column)/Name3"]
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="PositionLabel" type="Label" parent="MarginContainer2/MarginContainer/HBoxContainer/VBox(1st Column)/Name3"]
+texture_filter = 3
+layout_mode = 2
+theme_override_colors/font_color = Color(0.40784314, 0.77254903, 0.85882354, 1)
+theme_override_fonts/font = ExtResource("1_ymyx7")
+text = "Level Designer"
+horizontal_alignment = 2
+
+[node name="Name4" type="HBoxContainer" parent="MarginContainer2/MarginContainer/HBoxContainer/VBox(1st Column)"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="NameLabel" type="Label" parent="MarginContainer2/MarginContainer/HBoxContainer/VBox(1st Column)/Name4"]
+texture_filter = 3
+layout_mode = 2
+theme_override_colors/font_color = Color(0.40784314, 0.77254903, 0.85882354, 1)
+theme_override_fonts/font = ExtResource("1_ymyx7")
+text = "Connor"
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer2/MarginContainer/HBoxContainer/VBox(1st Column)/Name4"]
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="PositionLabel" type="Label" parent="MarginContainer2/MarginContainer/HBoxContainer/VBox(1st Column)/Name4"]
+texture_filter = 3
+layout_mode = 2
+theme_override_colors/font_color = Color(0.40784314, 0.77254903, 0.85882354, 1)
+theme_override_fonts/font = ExtResource("1_ymyx7")
+text = "Sound/Visual Designer"
+horizontal_alignment = 2
+
+[node name="Name5" type="HBoxContainer" parent="MarginContainer2/MarginContainer/HBoxContainer/VBox(1st Column)"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="NameLabel" type="Label" parent="MarginContainer2/MarginContainer/HBoxContainer/VBox(1st Column)/Name5"]
+texture_filter = 3
+layout_mode = 2
+theme_override_colors/font_color = Color(0.40784314, 0.77254903, 0.85882354, 1)
+theme_override_fonts/font = ExtResource("1_ymyx7")
+text = "Sejin"
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer2/MarginContainer/HBoxContainer/VBox(1st Column)/Name5"]
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="PositionLabel" type="Label" parent="MarginContainer2/MarginContainer/HBoxContainer/VBox(1st Column)/Name5"]
+texture_filter = 3
+layout_mode = 2
+theme_override_colors/font_color = Color(0.40784314, 0.77254903, 0.85882354, 1)
+theme_override_fonts/font = ExtResource("1_ymyx7")
+text = "Position Label"
+horizontal_alignment = 2
+
+[node name="TitleContainer" type="MarginContainer" parent="MarginContainer2"]
+custom_minimum_size = Vector2(500, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_constants/margin_bottom = 20
+
+[node name="Label" type="Label" parent="MarginContainer2/TitleContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0.007843138, 0.09411765, 0.16862746, 1)
+theme_override_colors/font_shadow_color = Color(0.40784314, 0.77254903, 0.85882354, 1)
+theme_override_colors/font_outline_color = Color(0.26666668, 0.56078434, 0.6392157, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("1_ymyx7")
+theme_override_font_sizes/font_size = 45
+text = "CREDITS"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="BackButton" type="Button" parent="."]
+texture_filter = 3
+layout_mode = 0
+offset_left = 35.0
+offset_top = 35.0
+offset_right = 147.0
+offset_bottom = 80.0
+theme_override_colors/font_color = Color(0.007843138, 0.09411765, 0.16862746, 1)
+theme_override_colors/font_focus_color = Color(0.007843138, 0.09411765, 0.16862746, 1)
+theme_override_colors/font_pressed_color = Color(0.84313726, 0.14901961, 0.23921569, 1)
+theme_override_colors/font_hover_color = Color(0.26666668, 0.56078434, 0.6392157, 1)
+theme_override_colors/font_outline_color = Color(0.40784314, 0.77254903, 0.85882354, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("1_ymyx7")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ymyx7")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_7u7vl")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_x87vl")
+text = "BACK"
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_pressed"]

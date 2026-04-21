@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=3 uid="uid://buvtev6nnmlg0"]
+
+[sub_resource type="GDScript" id="GDScript_cup6r"]
+script/source = "extends Control
+
+signal resume_requested
+signal main_menu_requested
+signal quit_requested
+
+func _ready() -> void:
+	%ResumeButton.pressed.connect(_on_resume_button_pressed)
+	%MainMenuButton.pressed.connect(_on_main_menu_button_pressed)
+	%QuitButton.pressed.connect(_on_quit_button_pressed)
+
+
+func _on_resume_button_pressed() -> void:
+	resume_requested.emit()
+
+
+func _on_main_menu_button_pressed() -> void:
+	main_menu_requested.emit()
+
+
+func _on_quit_button_pressed() -> void:
+	quit_requested.emit()
+"
+
+[node name="PauseMenu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+script = SubResource("GDScript_cup6r")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ResumeButton" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="MainMenuButton" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="QuitButton" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2

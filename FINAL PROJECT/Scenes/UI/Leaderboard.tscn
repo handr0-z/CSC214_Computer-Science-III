@@ -1,0 +1,276 @@
+[gd_scene load_steps=7 format=3 uid="uid://cfp1bgjqcig5j"]
+
+[ext_resource type="Texture2D" uid="uid://depa1pq6iyiuu" path="res://Resources/UI/blueBorder.tres" id="1_003co"]
+[ext_resource type="FontFile" uid="uid://cj8xiwghoopru" path="res://Assets/Fonts/Daydream DEMO.otf" id="1_4pymk"]
+[ext_resource type="Script" uid="uid://4roas7hya1il" path="res://Scripts/UI/leaderboard.gd" id="1_gd5vi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_003co"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hyvjo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mttrh"]
+
+[node name="Leaderboard" type="Control"]
+custom_minimum_size = Vector2(400, 350)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -264.25
+offset_top = -233.0
+offset_right = 264.25
+offset_bottom = 233.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_gd5vi")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+modulate = Color(0.40784314, 0.77254903, 0.85882354, 1)
+texture_filter = 3
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -284.50116
+offset_top = -275.875
+offset_right = 284.50116
+offset_bottom = 275.875
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_003co")
+region_rect = Rect2(1.0991287, -0.16408825, 63.11409, 65.403206)
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 22
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer2/VBoxContainer"]
+texture_filter = 3
+layout_mode = 2
+theme_override_colors/font_color = Color(0.007843138, 0.09411765, 0.16862746, 1)
+theme_override_colors/font_shadow_color = Color(0.40784314, 0.77254903, 0.85882354, 1)
+theme_override_colors/font_outline_color = Color(0.40784314, 0.77254903, 0.85882354, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("1_4pymk")
+theme_override_font_sizes/font_size = 16
+text = "PLAYER   STATS"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer2/VBoxContainer"]
+custom_minimum_size = Vector2(60, 50)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 35
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Stat1" type="HBoxContainer" parent="MarginContainer2/VBoxContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_constants/separation = 1
+alignment = 1
+
+[node name="NameLabel" type="Label" parent="MarginContainer2/VBoxContainer/MarginContainer/VBoxContainer/Stat1"]
+texture_filter = 3
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_4pymk")
+theme_override_font_sizes/font_size = 15
+text = "Unknown"
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer2/VBoxContainer/MarginContainer/VBoxContainer/Stat1"]
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="RankLabel" type="Label" parent="MarginContainer2/VBoxContainer/MarginContainer/VBoxContainer/Stat1"]
+texture_filter = 3
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_4pymk")
+theme_override_font_sizes/font_size = 15
+text = "0000"
+
+[node name="Stat2" type="HBoxContainer" parent="MarginContainer2/VBoxContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_constants/separation = 1
+alignment = 1
+
+[node name="NameLabel" type="Label" parent="MarginContainer2/VBoxContainer/MarginContainer/VBoxContainer/Stat2"]
+texture_filter = 3
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_4pymk")
+theme_override_font_sizes/font_size = 15
+text = "Unknown"
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer2/VBoxContainer/MarginContainer/VBoxContainer/Stat2"]
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="RankLabel" type="Label" parent="MarginContainer2/VBoxContainer/MarginContainer/VBoxContainer/Stat2"]
+texture_filter = 3
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_4pymk")
+theme_override_font_sizes/font_size = 15
+text = "0000"
+
+[node name="Stat3" type="HBoxContainer" parent="MarginContainer2/VBoxContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_constants/separation = 1
+alignment = 1
+
+[node name="NameLabel" type="Label" parent="MarginContainer2/VBoxContainer/MarginContainer/VBoxContainer/Stat3"]
+texture_filter = 3
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_4pymk")
+theme_override_font_sizes/font_size = 15
+text = "Unknown"
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer2/VBoxContainer/MarginContainer/VBoxContainer/Stat3"]
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="RankLabel" type="Label" parent="MarginContainer2/VBoxContainer/MarginContainer/VBoxContainer/Stat3"]
+texture_filter = 3
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_4pymk")
+theme_override_font_sizes/font_size = 15
+text = "0000"
+
+[node name="Stat4" type="HBoxContainer" parent="MarginContainer2/VBoxContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_constants/separation = 1
+alignment = 1
+
+[node name="NameLabel" type="Label" parent="MarginContainer2/VBoxContainer/MarginContainer/VBoxContainer/Stat4"]
+texture_filter = 3
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_4pymk")
+theme_override_font_sizes/font_size = 15
+text = "Unknown"
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer2/VBoxContainer/MarginContainer/VBoxContainer/Stat4"]
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="RankLabel" type="Label" parent="MarginContainer2/VBoxContainer/MarginContainer/VBoxContainer/Stat4"]
+texture_filter = 3
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_4pymk")
+theme_override_font_sizes/font_size = 15
+text = "0000"
+
+[node name="Stat5" type="HBoxContainer" parent="MarginContainer2/VBoxContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_constants/separation = 1
+alignment = 1
+
+[node name="NameLabel" type="Label" parent="MarginContainer2/VBoxContainer/MarginContainer/VBoxContainer/Stat5"]
+texture_filter = 3
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_4pymk")
+theme_override_font_sizes/font_size = 15
+text = "Unknown"
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer2/VBoxContainer/MarginContainer/VBoxContainer/Stat5"]
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="RankLabel" type="Label" parent="MarginContainer2/VBoxContainer/MarginContainer/VBoxContainer/Stat5"]
+texture_filter = 3
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_4pymk")
+theme_override_font_sizes/font_size = 15
+text = "0000"
+
+[node name="Stat6" type="HBoxContainer" parent="MarginContainer2/VBoxContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_constants/separation = 1
+alignment = 1
+
+[node name="NameLabel" type="Label" parent="MarginContainer2/VBoxContainer/MarginContainer/VBoxContainer/Stat6"]
+texture_filter = 3
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_4pymk")
+theme_override_font_sizes/font_size = 15
+text = "Unknown"
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer2/VBoxContainer/MarginContainer/VBoxContainer/Stat6"]
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="RankLabel" type="Label" parent="MarginContainer2/VBoxContainer/MarginContainer/VBoxContainer/Stat6"]
+texture_filter = 3
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_4pymk")
+theme_override_font_sizes/font_size = 15
+text = "0000"
+
+[node name="Stat7" type="HBoxContainer" parent="MarginContainer2/VBoxContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_constants/separation = 1
+alignment = 1
+
+[node name="NameLabel" type="Label" parent="MarginContainer2/VBoxContainer/MarginContainer/VBoxContainer/Stat7"]
+texture_filter = 3
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_4pymk")
+theme_override_font_sizes/font_size = 15
+text = "Unknown"
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer2/VBoxContainer/MarginContainer/VBoxContainer/Stat7"]
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="RankLabel" type="Label" parent="MarginContainer2/VBoxContainer/MarginContainer/VBoxContainer/Stat7"]
+texture_filter = 3
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_4pymk")
+theme_override_font_sizes/font_size = 15
+text = "0000"
+
+[node name="Button" type="Button" parent="MarginContainer2/VBoxContainer"]
+texture_filter = 3
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.007843138, 0.09411765, 0.16862746, 1)
+theme_override_colors/font_focus_color = Color(0.007843138, 0.09411765, 0.16862746, 1)
+theme_override_colors/font_pressed_color = Color(0.84313726, 0.14901961, 0.23921569, 1)
+theme_override_colors/font_hover_color = Color(0.26666668, 0.56078434, 0.6392157, 1)
+theme_override_colors/font_outline_color = Color(0.40784314, 0.77254903, 0.85882354, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("1_4pymk")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_003co")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_hyvjo")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_mttrh")
+text = "Exit"

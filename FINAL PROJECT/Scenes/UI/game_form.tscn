@@ -1,0 +1,123 @@
+[gd_scene load_steps=11 format=3 uid="uid://b1pjw4s15wm6b"]
+
+[ext_resource type="Script" uid="uid://cfuos5n663eq7" path="res://Scripts/UI/game_form.gd" id="1_2xrgf"]
+[ext_resource type="PackedScene" uid="uid://cksee1q0k6by2" path="res://Scenes/UI/w_tower.tscn" id="1_55u1p"]
+[ext_resource type="PackedScene" uid="uid://4c7g5vudwksg" path="res://Scenes/Level Assets/Tower/tower_02.tscn" id="3_6haoi"]
+[ext_resource type="PackedScene" uid="uid://b0s3vm6evpi2m" path="res://Scenes/Level Assets/Tower/tower_01.tscn" id="3_q2ctl"]
+[ext_resource type="PackedScene" uid="uid://bdvsih7jrrdtr" path="res://Scenes/Level Assets/Tower/tower_03.tscn" id="4_y5561"]
+[ext_resource type="PackedScene" uid="uid://d0v6d5gklcva6" path="res://Scenes/Level Assets/Tower/tower_04.tscn" id="6_2dxa1"]
+[ext_resource type="PackedScene" uid="uid://2a30u32gxesu" path="res://Scenes/UI/w_game_over.tscn" id="6_l4kq6"]
+[ext_resource type="PackedScene" uid="uid://begabuyvhb815" path="res://Scenes/UI/upgrade_panel.tscn" id="7_46tam"]
+[ext_resource type="PackedScene" uid="uid://b3sppv3q44m4h" path="res://Scenes/UI/levelcomplete.tscn" id="8_0eg8b"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jjcin"]
+bg_color = Color(0.858824, 0.145098, 0.156863, 1)
+
+[node name="game_form" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_2xrgf")
+
+[node name="coins & health" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="coins & health"]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="coins & health/HBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="coins & health/HBoxContainer/MarginContainer2"]
+layout_mode = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="coins & health/HBoxContainer"]
+layout_mode = 2
+
+[node name="lab_coin" type="Label" parent="coins & health/HBoxContainer/MarginContainer3"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+text = "Gold：0"
+
+[node name="MarginContainer" type="MarginContainer" parent="coins & health/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="pb_health" type="ProgressBar" parent="coins & health/HBoxContainer/MarginContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_styles/fill = SubResource("StyleBoxFlat_jjcin")
+value = 50.0
+
+[node name="tower shop" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -64.0
+offset_right = 100.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="tower shop"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="w_tower" parent="tower shop/HBoxContainer" instance=ExtResource("1_55u1p")]
+layout_mode = 2
+P_TOWER = ExtResource("3_q2ctl")
+
+[node name="w_tower2" parent="tower shop/HBoxContainer" instance=ExtResource("1_55u1p")]
+layout_mode = 2
+P_TOWER = ExtResource("3_6haoi")
+
+[node name="w_tower3" parent="tower shop/HBoxContainer" instance=ExtResource("1_55u1p")]
+layout_mode = 2
+P_TOWER = ExtResource("4_y5561")
+
+[node name="w_tower4" parent="tower shop/HBoxContainer" instance=ExtResource("1_55u1p")]
+layout_mode = 2
+P_TOWER = ExtResource("6_2dxa1")
+
+[node name="upgrade_panel" parent="." instance=ExtResource("7_46tam")]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+offset_left = -220.0
+offset_top = -150.0
+
+[node name="w_game_over" parent="." instance=ExtResource("6_l4kq6")]
+process_mode = 3
+layout_mode = 1
+offset_left = -160.0
+offset_top = -111.0
+offset_right = 160.0
+offset_bottom = 109.0
+
+[node name="levelcomplete" parent="." instance=ExtResource("8_0eg8b")]
+layout_mode = 1
+offset_left = -160.0
+offset_top = -110.0
+offset_right = 160.0
+offset_bottom = 110.0

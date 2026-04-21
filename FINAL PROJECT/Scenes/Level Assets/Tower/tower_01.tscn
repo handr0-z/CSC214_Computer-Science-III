@@ -1,0 +1,31 @@
+[gd_scene load_steps=9 format=3 uid="uid://b0s3vm6evpi2m"]
+
+[ext_resource type="PackedScene" uid="uid://k0vt6u5l84ia" path="res://Scenes/Level Assets/Tower/tower.tscn" id="1_4uhxp"]
+[ext_resource type="PackedScene" uid="uid://dsv7vfuh3knl1" path="res://Scenes/Level Assets/Bullet/bullet_homing.tscn" id="2_kxxnp"]
+[ext_resource type="Texture2D" uid="uid://cwbd7qkluibtd" path="res://Assets/Art/Level Assets/Tower/Pumpkin base.png" id="3_r26lp"]
+[ext_resource type="Texture2D" uid="uid://cyy12ypw1taa7" path="res://Assets/Art/Level Assets/Tower/Pumpkin 1.1.png" id="4_057ny"]
+[ext_resource type="Texture2D" uid="uid://byjb6yjohekek" path="res://Assets/Art/Level Assets/Tower/Pumpkin 1.2.png" id="5_x1fw7"]
+[ext_resource type="Texture2D" uid="uid://dcidj2lbw616m" path="res://Assets/Art/Level Assets/Tower/Pumpkin 1.3.png" id="6_u6tjr"]
+[ext_resource type="Texture2D" uid="uid://cqk373v2yd3os" path="res://Assets/Art/Level Assets/Tower/Pumpkin 1.4.png" id="7_xq4ak"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_jrjmo"]
+frames = 4
+frame_0/texture = ExtResource("4_057ny")
+frame_0/duration = 0.2
+frame_1/texture = ExtResource("5_x1fw7")
+frame_1/duration = 0.2
+frame_2/texture = ExtResource("6_u6tjr")
+frame_2/duration = 0.2
+frame_3/texture = ExtResource("7_xq4ak")
+frame_3/duration = 0.2
+
+[node name="tower_01" instance=ExtResource("1_4uhxp")]
+p_bullet = ExtResource("2_kxxnp")
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("3_r26lp")
+
+[node name="Sprite2D2" parent="fort" index="0"]
+texture = SubResource("AnimatedTexture_jrjmo")
+
+[connection signal="input_event" from="ClickArea" to="." method="input_event"]
