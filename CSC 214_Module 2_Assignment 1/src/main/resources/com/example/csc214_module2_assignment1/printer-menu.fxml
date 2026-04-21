@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.csc214_module2_assignment1.PrinterMenuController">
+    <center>
+        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #fffcf8;" BorderPane.alignment="CENTER">
+            <children>
+                <Text fill="#45abed" strokeType="OUTSIDE" strokeWidth="0.0" text="DEVICES" textAlignment="CENTER" underline="true">
+                    <font>
+                        <Font name="Cera PROModern Medium" size="64.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets top="30.0" />
+                    </VBox.margin>
+                </Text>
+                <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+                    <children>
+                        <ChoiceBox fx:id="filterList" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #45abed;" />
+                        <ToggleButton fx:id="filterButton" mnemonicParsing="false" onAction="#filterMenuHandler" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #45abed;" text="Filter">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                        </ToggleButton>
+                    </children>
+                    <padding>
+                        <Insets top="30.0" />
+                    </padding>
+                </HBox>
+                <HBox alignment="CENTER" prefHeight="300.0" prefWidth="200.0">
+                    <children>
+                  <TableView fx:id="devicesTableView" prefHeight="400.0" prefWidth="1000.0">
+                    <columns>
+                      <TableColumn fx:id="printerNameColumn" prefWidth="150.0" text="Printer Name" />
+                      <TableColumn fx:id="iPv4AddressColumn" prefWidth="150.0" text="iPv4 Address" />
+                        <TableColumn fx:id="lastCommunicationTimeColumn" prefWidth="200.0" text="Last Communication Time" />
+                        <TableColumn fx:id="serialNumberColumn" prefWidth="100.0" text="Serial #" />
+                        <TableColumn fx:id="pageCountColumn" prefWidth="100.0" text="Page Count" />
+                        <TableColumn fx:id="blackCartridgeLevelColumn" prefWidth="150.0" text="Black Toner Level" />
+                        <TableColumn fx:id="colorCartridgeLevelColumn" prefWidth="150.0" text="Color Toner Level" />
+                    </columns>
+                     <HBox.margin>
+                        <Insets top="20.0" />
+                     </HBox.margin>
+                  </TableView>
+                    </children>
+                </HBox>
+                  <ListView fx:id="menuListView" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#listViewSelectionHandler" prefHeight="400.0" prefWidth="1000.0">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </ListView>
+                <TextField fx:id="itemInfoTextField" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="1000.0">
+                    <VBox.margin>
+                        <Insets top="20.0" />
+                    </VBox.margin>
+                </TextField>
+            </children>
+        </VBox>
+    </center>
+</BorderPane>

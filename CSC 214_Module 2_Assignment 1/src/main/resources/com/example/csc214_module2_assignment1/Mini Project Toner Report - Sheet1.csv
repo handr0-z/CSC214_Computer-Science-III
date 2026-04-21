@@ -1,0 +1,15 @@
+DeviceName,IPv4Address,LastCommunicationTime,SerialNumber,PageCount,BlackCartridge,ColorCartridge
+rm259-printer,1.2.3.4,3:00 PM,3f3kasl,1560,80,0
+rm260-printer,1.2.3.5,4:38 AM,3f3kas1,5558,8,85
+rm261-printer,1.2.3.6,8:00 PM,3f3kas3,4564,76,85
+rm262-printer,1.2.3.7,8:33 AM,3f3kas5,850,99,5
+rm263-printer,1.2.3.8,2:15 PM,3f3kas6,1240,60,35
+rm264-printer,1.2.3.9,9:45 AM,3f3kas7,3200,40,70
+rm265-printer,1.2.3.10,1:10 AM,3f3kas8,2850,30,15
+rm266-printer,1.2.3.11,11:20 PM,3f3kas9,7620,5,2
+rm267-printer,1.2.3.12,6:05 AM,3f3kasa,1840,85,90
+rm268-printer,1.2.3.13,7:30 PM,3f3kasb,660,100,50
+rm269-printer,1.2.3.14,5:55 PM,3f3kasc,10300,12,8
+rm270-printer,1.2.3.15,10:00 AM,3f3kasd,4970,45,60
+rm271-printer,1.2.3.16,3:50 AM,3f3kase,150,95,95
+rm272-printer,1.2.3.17,12:00 PM,3f3kasf,2200,70,40
