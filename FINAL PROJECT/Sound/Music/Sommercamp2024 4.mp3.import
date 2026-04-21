@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c1yyf3xrbjyro"
+path="res://.godot/imported/Sommercamp2024 4.mp3-6e0583bdec2f56f61df53e456d8c3eb8.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/Music/Sommercamp2024 4.mp3"
+dest_files=["res://.godot/imported/Sommercamp2024 4.mp3-6e0583bdec2f56f61df53e456d8c3eb8.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4
